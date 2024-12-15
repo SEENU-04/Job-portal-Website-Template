@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobwala</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="icon" href="https://www.kindpng.com/picc/m/263-2637108_career-icon-png-clipart-png-download-icon-job.png" type="image/x-icon">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+/**  navigation bar **/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-buttons .login-btn {
+    background-color: #f39c12;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Job Search Section */
+.job-search {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.job-search h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.job-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.job-filters input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.job-filters .filter-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.job-filters {
+    text-align: center;
+    padding: 30px;
+    background-color: #f4f4f4;
+}
+
+.job-filters select, .filter-btn {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+
+/* Job Listings Section */
+.job-listings {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.job-listings h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.job-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.job-item {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.job-item:hover {
+    transform: translateY(-5px);
+}
+
+.job-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.job-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+.job-item .apply-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.job-listings .job-item {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.bookmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Job Description Modal */
+.job-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 4px;
+    width: 60%;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .job-filters {
+        flex-direction: column;
+    }
+
+    .job-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-item {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f39c12;
+}
+
+.back-to-top {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background-color: #e67e22;
+}
+
+
+</style>
+<body>
+     <!-- Navigation Bar -->
+     <nav>
+        <div class="logo">Jobwala </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="company review.html">Company Reviews</a></li>
+            <li><a href="About section.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <br>
+            <li><a href="post-job.html">Employers/Post job</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Skill, Title">
+            <input type="text" placeholder="Place">
+            <button>Search</button>
+        </div>
+        <div class="nav-buttons">
+            <a href="login page.html" class="login-btn">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+        </div>
+    </nav>
+
+    <!-- Job Search Filter Section -->
+    <section class="job-search">
+        <h2>Search for Jobs</h2>
+        <div class="job-filters">
+            <input type="text" placeholder="Job Title or Keyword">
+            <input type="text" placeholder="Location">
+            <button class="filter-btn">Search Jobs</button>
+        </div>
+    </section>
+
+<!-- Job Listings Section -->
+<section class="job-listings">
+    <h2>Available Jobs</h2>
+    <div class="job-list">
+
+        <!-- Job Item 1 -->
+        <div class="job-item">
+            <h3>Frontend Developer</h3>
+            <p>Location: Mumbai, India</p>
+            <p>Salary: ₹40,000 - ₹60,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 2 -->
+        <div class="job-item">
+            <h3>Backend Developer</h3>
+            <p>Location: Bangalore, India</p>
+            <p>Salary: ₹50,000 - ₹80,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 3 -->
+        <div class="job-item">
+            <h3>Full Stack Developer</h3>
+            <p>Location: Delhi, India</p>
+            <p>Salary: ₹60,000 - ₹90,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 4 -->
+        <div class="job-item">
+            <h3>UI/UX Designer</h3>
+            <p>Location: Hyderabad, India</p>
+            <p>Salary: ₹35,000 - ₹50,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 5 -->
+        <div class="job-item">
+            <h3>Data Analyst</h3>
+            <p>Location: Pune, India</p>
+            <p>Salary: ₹45,000 - ₹70,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 6 -->
+        <div class="job-item">
+            <h3>Product Manager</h3>
+            <p>Location: Chennai, India</p>
+            <p>Salary: ₹80,000 - ₹120,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 7 -->
+        <div class="job-item">
+            <h3>Cloud Engineer</h3>
+            <p>Location: Noida, India</p>
+            <p>Salary: ₹70,000 - ₹100,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 8 -->
+        <div class="job-item">
+            <h3>DevOps Engineer</h3>
+            <p>Location: Gurugram, India</p>
+            <p>Salary: ₹60,000 - ₹90,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 9 -->
+        <div class="job-item">
+            <h3>Marketing Manager</h3>
+            <p>Location: Kolkata, India</p>
+            <p>Salary: ₹50,000 - ₹85,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Job Item 10 -->
+        <div class="job-item">
+            <h3>Business Analyst</h3>
+            <p>Location: Jaipur, India</p>
+            <p>Salary: ₹45,000 - ₹75,000 / month</p>
+            <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Add more job items as needed -->
+
+    </div>
+</section>
+
+    <!-- Job Filters Section -->
+    <section class="job-filters">
+        <h2>Filter Jobs</h2>
+        <div class="filters">
+            <!-- Job Category Filter -->
+            <select id="job-category">
+                <option value="all">All Categories</option>
+                <option value="it">IT</option>
+                <option value="marketing">Marketing</option>
+                <option value="finance">Finance</option>
+            </select>
+
+            <!-- Job Type Filter -->
+            <select id="job-type">
+                <option value="all">All Job Types</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="freelance">Freelance</option>
+            </select>
+
+            <button class="filter-btn">Filter Jobs</button>
+        </div>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="job-listings">
+        <h2>Available Jobs</h2>
+        <div class="job-list">
+            <!-- Job Item 1 -->
+            <div class="job-item" onclick="showJobDetail(1)">
+                <h3>Frontend Developer</h3>
+                <p>Location: Mumbai, India</p>
+                <p>Salary: ₹40,000 - ₹60,000 / month</p>
+                <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 1)"></i>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Job Item 2 -->
+            <div class="job-item" onclick="showJobDetail(2)">
+                <h3>Backend Developer</h3>
+                <p>Location: Bangalore, India</p>
+                <p>Salary: ₹50,000 - ₹80,000 / month</p>
+                <i class="fas fa-bookmark bookmark" onclick="bookmarkJob(event, 2)"></i>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+
+            <!-- Additional Job Items -->
+            <!-- Add more job items here -->
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button class="prev-btn">Previous</button>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <!-- Job Description Modal -->
+    <div id="job-modal" class="job-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-job-title">Job Title</h2>
+            <p id="modal-job-description">Detailed job description goes here.</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Jobwala © 2024. All Rights Reserved.
+                --Developed by Abhishek
+            </p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Open job detail modal
+function showJobDetail(jobId) {
+    const jobModal = document.getElementById('job-modal');
+    const jobTitle = document.getElementById('modal-job-title');
+    const jobDescription = document.getElementById('modal-job-description');
+
+    // Dummy content for the modal
+    const jobs = {
+        1: { title: "Frontend Developer", description: "Frontend developers work on the UI of websites." },
+        2: { title: "Backend Developer", description: "Backend developers work on server-side logic." }
+    };
+
+    jobTitle.innerHTML = jobs[jobId].title;
+    jobDescription.innerHTML = jobs[jobId].description;
+    jobModal.style.display = 'block';
+}
+
+// Close job detail modal
+function closeModal() {
+    document.getElementById('job-modal').style.display = 'none';
+}
+
+// Bookmark a job
+function bookmarkJob(event, jobId) {
+    event.stopPropagation();
+    const bookmarkIcon = event.target;
+    bookmarkIcon.classList.toggle('bookmarked');
+    if (bookmarkIcon.classList.contains('bookmarked')) {
+        alert(`Job ${jobId} bookmarked`);
+    } else {
+        alert(`Job ${jobId} removed from bookmarks`);
+    }
+}
+
+// Pagination functionality (for demonstration purposes)
+document.querySelector('.prev-btn').addEventListener('click', function() {
+    alert('Previous page clicked');
+});
+
+document.querySelector('.next-btn').addEventListener('click', function() {
+    alert('Next page clicked');
+});
+
+
+
+    </script>
+</body>
+</html>

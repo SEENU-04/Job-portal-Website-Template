@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jobwala</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    /* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-buttons .login-btn {
+    background-color: #f39c12;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* General styles remain the same */
+
+/* About Us Section */
+.about-us {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        margin-right: 0;
+    }
+
+    .about-image {
+        margin: 20px auto;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f39c12;
+}
+
+.back-to-top {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background-color: #e67e22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        margin: 5px 0;
+    }
+
+    .job-item, .company-item {
+        width: calc(45% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .job-item, .company-item {
+        width: calc(100% - 40px);
+    }
+}
+
+</style>
+<body>
+
+     <!-- Navigation Bar -->
+     <nav>
+        <div class="logo">Jobwala </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job section.html">Jobs</a></li>
+            <li><a href="company review.html">Company Reviews</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <br>
+            <li><a href="post-job.html">Employers/Post job</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Skill, Title">
+            <input type="text" placeholder="Place">
+            <button>Search</button>
+        </div>
+        <div class="nav-buttons">
+            <a href="login page.html" class="login-btn">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="about-container">
+            <div class="about-text">
+                <h1>About Jobwala</h1>
+                <p>
+                    Welcome to <strong>Jobwala</strong>, your go-to platform for finding job opportunities tailored to your skills and preferences. 
+                    We are dedicated to connecting job seekers with employers, making the recruitment process easier and faster. 
+                </p>
+                <p>
+                    Whether you're looking for full-time work, part-time gigs, or freelance projects, Jobwala offers a wide range of job listings across different industries.
+                    Our mission is to provide job seekers with the best job opportunities and employers with the best talent to fit their teams.
+                </p>
+                <p>With Jobwala, you can:</p>
+                <ul>
+                    <li>Search jobs based on skills, location, and industry</li>
+                    <li>Bookmark your favorite jobs for later review</li>
+                    <li>Apply easily with just a few clicks</li>
+                    <li>Get updated on the latest job openings</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="banner 2.png" alt="About Jobwala">
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer>
+    <div class="footer-content">
+        <p>Jobwala © 2024. All Rights Reserved.
+            --Developed by Abhishek
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+    </div>
+</footer>
+
+    <script ></script>
+</body>
+</html>

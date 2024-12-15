@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - Jobwala</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+     /** navigation section**/
+     body {
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-buttons .login-btn {
+    background-color: #f39c12;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* General styles remain the same */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Post Job Section */
+.post-job-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Form Styles */
+.post-job-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    .post-job-form {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        padding: 8px;
+    }
+    
+    .submit-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+</style>
+<body>
+
+     <!-- Navigation Bar -->
+     <nav>
+        <div class="logo">Jobwala </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job section.html">Jobs</a></li>
+            <li><a href="company review.html">Company Reviews</a></li>
+            <li><a href="About section.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <br>
+            <li><a href="post-job.html">Employers/Post job</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Skill, Title">
+            <input type="text" placeholder="Place">
+            <button>Search</button>
+        </div>
+        <div class="nav-buttons">
+            <a href="login page.html" class="login-btn">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+        </div>
+    </nav>
+
+    <!-- Post a Job Section -->
+    <section class="post-job-section">
+        <div class="container">
+            <h2>Post a Job</h2>
+            <p>Fill out the form below to post a job and attract the best candidates.</p>
+
+            <form class="post-job-form">
+                <!-- Job Details Section -->
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job-title" placeholder="Enter Job Title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="job-description">Job Description</label>
+                    <textarea id="job-description" name="job-description" placeholder="Enter Job Description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="text" id="salary" name="salary" placeholder="Enter Salary (e.g. $50,000)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="Enter Job Location" required>
+                </div>
+
+                <!-- Company Details Section -->
+                <h3>Company Details</h3>
+
+                <div class="form-group">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" name="company-name" placeholder="Enter Company Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company-website">Company Website</label>
+                    <input type="text" id="company-website" name="company-website" placeholder="Enter Company Website" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Contact Email</label>
+                    <input type="email" id="contact-email" name="contact-email" placeholder="Enter Contact Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">Contact Phone</label>
+                    <input type="tel" id="contact-phone" name="contact-phone" placeholder="Enter Contact Phone" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Post Job</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Job Board © 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+       document.getElementById('post-job-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+    
+    // Get form values
+    let jobTitle = document.getElementById('job-title').value;
+    let jobDescription = document.getElementById('job-description').value;
+    let salary = document.getElementById('salary').value;
+    let location = document.getElementById('location').value;
+
+    // Create a job object
+    let job = {
+        title: jobTitle,
+        description: jobDescription,
+        salary: salary,
+        location: location
+    };
+
+    // Get jobs from localStorage (or create an empty array if none exist)
+    let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+
+    // Add the new job to the jobs array
+    jobs.push(job);
+
+    // Save the updated jobs array to localStorage
+    localStorage.setItem('jobs', JSON.stringify(jobs));
+
+    alert('Job posted successfully!');
+
+    // Optionally, clear the form fields after submission
+    document.getElementById('post-job-form').reset();
+});
+
+
+    </script>
+</body>
+</html>

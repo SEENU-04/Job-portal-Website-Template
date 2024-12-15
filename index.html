@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobwala</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+     <!-- Favicon -->
+     <link rel="icon" href="https://www.kindpng.com/picc/m/263-2637108_career-icon-png-clipart-png-download-icon-job.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Jobwala </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="job section.html">Jobs</a></li>
+            <li><a href="company review.html">Company Reviews</a></li>
+            <li><a href="About section.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <br>
+            <li><a href="post-job.html">Employers/Post job</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Skill, Title">
+            <input type="text" placeholder="Place">
+            <button>Search</button>
+        </div>
+        <div class="nav-buttons">
+            <a href="login page.html" class="login-btn">
+                <i class="fas fa-user"></i> Login/Register
+            </a>
+        </div>
+    </nav>
+
+    <!-- Image Slideshow -->
+    <div class="slideshow">
+        <div class="slide active">
+            <img src="banner 1.jpg" alt="Find Your Dream Job">
+            <div class="slide-text">
+                <h2>Find Your Dream Job</h2>
+                <p>Explore a wide range of job opportunities that match your skills and interests.</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="banner 2.png" alt="Unlock New Career Paths">
+            <div class="slide-text">
+                <h2>Unlock New Career Paths</h2>
+                <p>Take the next step in your career with exciting opportunities.</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="banner 3.png" alt="Join a Vibrant Team">
+            <div class="slide-text">
+                <h2>Join a Vibrant Team</h2>
+                <p>Work with passionate people and make a difference.</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+        <!-- Navigation buttons for slideshow -->
+        <div class="slideshow-nav">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Job Section -->
+    <section class="job-section">
+        <h2>Featured Jobs</h2>
+        <div class="job-filters">
+            <button class="filter-btn active" data-filter="all">All Jobs</button>
+            <button class="filter-btn" data-filter="it">IT Jobs</button>
+            <button class="filter-btn" data-filter="marketing">Marketing Jobs</button>
+            <button class="filter-btn" data-filter="design">Design Jobs</button>
+            <button class="filter-btn" data-filter="remote">Remote Jobs</button>
+            <button class="filter-btn" data-filter="remote">Internship</button>
+        </div>
+        <div class="job-list">
+            <div class="job-card" data-category="it">
+                <h3>Frontend Developer</h3>
+                <p>Company: XYZ Tech</p>
+                <p>Location: Mumbai, India</p>
+                <p>Type: Full-time</p>
+                <p>Experience: 2-4 years</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+            <div class="job-card" data-category="marketing">
+                <h3>Marketing Specialist</h3>
+                <p>Company: ABC Corp</p>
+                <p>Location: Bangalore, India</p>
+                <p>Type: Part-time</p>
+                <p>Experience: 1-3 years</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+            <div class="job-card" data-category="it">
+                <h3>Graphic Designer</h3>
+                <p>Company: Creative Studio</p>
+                <p>Location: Remote</p>
+                <p>Type: Contract</p>
+                <p>Experience: 3-5 years</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+            <div class="job-card" data-category="design">
+                <h3>Content Writer</h3>
+                <p>Company: Creative Studio</p>
+                <p>Location: Remote</p>
+                <p>Type: Contract</p>
+                <p>Experience: 3-5 years</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+            <div class="job-card" data-category="it">
+                <h3>UI/UX Designer</h3>
+                <p>Company: Creative Studio</p>
+                <p>Location: Remote</p>
+                <p>Type: Contract</p>
+                <p>Experience: 3-5 years</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+
+            <!-- Add more job cards as needed -->
+        </div>
+    </section>
+    
+
+    <!-- Company Section -->
+    <section class="company-section">
+        <h2>Top Companies Hiring</h2>
+        <div class="company-list">
+            <div class="company-item">
+                <img src="TCS img.png" alt="Company 1 Logo">
+                <p>Company 1</p>
+            </div>
+            <div class="company-item">
+                <img src="IBM img .png" alt="Company 2 Logo">
+                <p>Company 2</p>
+            </div>
+            <div class="company-item">
+                <img src="infosys-logo.png" alt="Company 3 Logo">
+                <p>Company 3</p>
+            </div>
+            <div class="company-item">
+                <img src="Capgemini .png" alt="Company 4 Logo">
+                <p>Company 4</p>
+            </div>
+            <div class="company-item">
+                <img src="deloitte png.png" alt="Company 5 Logo">
+                <p>Company 5</p>
+            </div>
+            <!-- Add more company items as needed -->
+             <button class="apply-btn">view all Jobs</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Jobwala © 2024. All Rights Reserved.
+                --Developed by Abhishek
+            </p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
